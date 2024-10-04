@@ -21,10 +21,12 @@
 		loading.set(true);
 		error.set('');
 		markdown.set('');
+
 		try {
 			const response = await axios.post('/api/summarize', {
 				texts: $input
 			});
+
 			markdown.set(response.data.markdown);
 		} catch (err: any) {
 			console.error('Submission Error:', err);
@@ -38,8 +40,10 @@
 		const blob = new Blob([$markdown], { type: 'text/markdown' });
 		const url = URL.createObjectURL(blob);
 		const link = document.createElement('a');
+
 		link.href = url;
 		link.download = 'blogpost.md';
+
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
@@ -58,7 +62,6 @@
 			placeholder="Enter your text here..."
 		></textarea>
 	</div>
-
 	<div class="flex gap-4">
 		<button
 			on:click={handleSubmit}
