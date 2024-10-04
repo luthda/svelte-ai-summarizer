@@ -18,7 +18,6 @@ This project is a **text summarization application** built using **SvelteKit**. 
 - **Bun.js**: JavaScript runtime for package management and script running.
 - **OpenAI API**: Utilizes GPT-3.5-turbo for text summarization.
 - **Marked**: Parses markdown content.
-- **DOMPurify**: Sanitizes HTML to prevent XSS attacks.
 
 ## Installation
 
